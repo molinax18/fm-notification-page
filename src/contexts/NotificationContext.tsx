@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 import type { Notification } from '../types/notification.type';
 import { type NotificationContext } from '../types/notificationContext.type';
+import { notifications } from '../constants/notifications';
 
 const NotificationContext = createContext<NotificationContext | null>(null);
 
 export const NotificationProvider = ({ children }: { children: ReactNode }) => {
-  const [state, setState] = useState<Notification[]>([]);
+  const [state, setState] = useState<Notification[]>(notifications);
 
   return (
     <NotificationContext.Provider value={{ state, setState }}>
