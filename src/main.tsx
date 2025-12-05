@@ -1,14 +1,14 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { MessageContextProvider } from './context/MessageContext.tsx';
+import { NotificationProvider } from './context/NotificationContext.tsx';
 
 import App from './App.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <MessageContextProvider>
+    <NotificationProvider>
       <App />
-    </MessageContextProvider>
+    </NotificationProvider>
   </StrictMode>
 );
