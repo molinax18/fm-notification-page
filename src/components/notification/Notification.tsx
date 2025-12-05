@@ -12,8 +12,8 @@ export default function Notification() {
     <section className="flex flex-col gap-y-6 bg-white h-full py-6 px-4 sm:h-auto sm:w-full sm:max-w-lg sm:rounded-lg sm:shadow-md sm:px-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-2">
-          <h3 className="font-semibold text-navy-950">Notifications</h3>
-          <span className="bg-blue-950 font-semibold text-white text-sm rounded-sm px-3 py-px">
+          <h3 className="font-bold text-navy-950">Notifications</h3>
+          <span className="bg-blue-950 font-bold text-white text-sm rounded-sm px-3 py-px">
             {getNotificationUnreadAmount()}
           </span>
         </div>
