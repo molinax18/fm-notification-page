@@ -13,14 +13,16 @@
   --color-navy-950: hsl(224, 21%, 14%);
 
   --font-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
-
-  --font-weight-medium: 500;
-  --font-weight-bold: 800;
 }
 
 @layer base {
   body {
-    font-family: var(--font-jakarta-sans);
-    font-weight: var(--font-weight-medium);
+    @apply font-jakarta-sans font-normal text-gray-600;
+  }
+}
+
+@layer components {
+  .tr-d-200 {
+    @apply transition ease-out duration-200;
   }
 }
