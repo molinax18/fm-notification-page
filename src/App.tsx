@@ -1,3 +1,9 @@
+import Notification from './components/notification/Notification';
+
 export default function App() {
-  return <div>App</div>;
+  return (
+    <main className="bg-navy-50 min-h-dvh">
+      <Notification />
+    </main>
+  );
 }
