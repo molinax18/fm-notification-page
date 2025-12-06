@@ -17,7 +17,7 @@
 
 @layer base {
   body {
-    @apply font-jakarta-sans font-normal text-gray-600;
+    @apply font-jakarta-sans font-normal text-base text-gray-600;
   }
 }
 

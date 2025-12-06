@@ -9,7 +9,11 @@ export default function NotificationCard({ data }: { data: Notification }) {
 
   const applyExtraStyles = () => {
     if (group) {
-      return <span className="font-bold text-blue-950">{group.name}</span>;
+      return (
+        <span className="font-bold text-blue-950 cursor-pointer">
+          {group.name}
+        </span>
+      );
     }
 
     if (post?.title) {
@@ -21,14 +25,16 @@ export default function NotificationCard({ data }: { data: Notification }) {
 
   return (
     <article
-      className={`flex items-center gap-x-3 ${read ? 'bg-transparent' : 'bg-navy-50'} text-sm p-3 rounded-md`}
+      className={`flex items-center gap-x-3 ${read ? 'bg-transparent' : 'bg-blue-50'} p-3 rounded-md`}
       onClick={() => dispatch({ type: 'MARK_SINGLE', payload: id })}
     >
       <img className="size-8 self-start" src={userImage} alt={userName} />
 
       <div className="grow">
         <p>
-          <span className="font-extrabold text-navy-950">{userName}</span>{' '}
+          <span className="font-extrabold text-navy-950 cursor-pointer hover:tr-d-200 hover:text-blue-950 focus:text-blue-950">
+            {userName}
+          </span>{' '}
           {getNotificationMessageByType(type)} {applyExtraStyles()}{' '}
           {!read && (
             <span className="after:text-red-500 after:content-['●']"></span>
@@ -38,12 +44,18 @@ export default function NotificationCard({ data }: { data: Notification }) {
         <span>{time}</span>
 
         {message && (
-          <p className="border border-navy-100 p-2 mt-2">{message}</p>
+          <p className="border border-navy-100 p-2 mt-2 cursor-pointer hover:tr-d-200 hover:bg-blue-100">
+            {message}
+          </p>
         )}
       </div>
 
       {post?.imageUrl && (
-        <img className="size-8 self-start" src={post.imageUrl} alt={post.alt} />
+        <img
+          className="size-8 self-start cursor-pointer"
+          src={post.imageUrl}
+          alt={post.alt}
+        />
       )}
     </article>
   );
