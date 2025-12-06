@@ -3,7 +3,7 @@ import type { Notification } from '../types/notification.type';
 export const notifications: Notification[] = [
   {
     id: 1,
-    userImage: '/images/avatar-mark-webber.webp',
+    userImage: 'assets/images/avatar-mark-webber.webp',
     userName: 'Mark Webber',
     time: '1m ago',
     read: false,
@@ -15,7 +15,7 @@ export const notifications: Notification[] = [
   },
   {
     id: 2,
-    userImage: '/images/avatar-angela-gray.webp',
+    userImage: 'assets/images/avatar-angela-gray.webp',
     userName: 'Angela Gray',
     time: '5m ago',
     read: false,
@@ -23,7 +23,7 @@ export const notifications: Notification[] = [
   },
   {
     id: 3,
-    userImage: '/images/avatar-jacob-thompson.webp',
+    userImage: 'assets/images/avatar-jacob-thompson.webp',
     userName: 'Jacob Thompson',
     time: '1 day ago',
     read: false,
@@ -35,7 +35,7 @@ export const notifications: Notification[] = [
   },
   {
     id: 4,
-    userImage: '/images/avatar-rizky-hasanuddin.webp',
+    userImage: 'assets/images/avatar-rizky-hasanuddin.webp',
     userName: 'Rizky Hasanuddin',
     time: '5 days ago',
     read: true,
@@ -45,19 +45,20 @@ export const notifications: Notification[] = [
   },
   {
     id: 5,
-    userImage: '/images/avatar-kimberly-smith.webp',
+    userImage: 'assets/images/avatar-kimberly-smith.webp',
     userName: 'Kimberly Smith',
     time: '1 week ago',
     read: true,
     type: 'comment',
     post: {
       id: 202,
-      imageUrl: '/images/commented-picture.webp',
+      imageUrl: 'assets/images/image-chess.webp',
+      alt: 'Chess club',
     },
   },
   {
     id: 6,
-    userImage: '/images/avatar-nathan-peterson.webp',
+    userImage: 'assets/images/avatar-nathan-peterson.webp',
     userName: 'Nathan Peterson',
     time: '2 weeks ago',
     read: true,
@@ -69,7 +70,7 @@ export const notifications: Notification[] = [
   },
   {
     id: 7,
-    userImage: '/images/avatar-anna-kim.webp',
+    userImage: 'assets/images/avatar-anna-kim.webp',
     userName: 'Anna Kim',
     time: '2 weeks ago',
     read: true,

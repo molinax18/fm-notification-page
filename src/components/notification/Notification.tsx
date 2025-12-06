@@ -1,20 +1,18 @@
 import { useNotificationContext } from '../../contexts/NotificationContext';
+import { getNotificationUnreadAmount } from '../../utils/notification.util';
 
 import NotificationCard from './NotificationCard';
 
 export default function Notification() {
   const { state } = useNotificationContext();
-  const getNotificationUnreadAmount = () => {
-    return state.reduce((acc, n) => (!n.read ? acc + 1 : acc), 0);
-  };
 
   return (
-    <section className="flex flex-col gap-y-6 bg-white h-full py-6 px-4 sm:h-auto sm:w-full sm:max-w-lg sm:rounded-lg sm:shadow-md sm:px-6">
+    <section className="flex flex-col gap-y-6 bg-white h-full py-6 px-4 sm:h-auto sm:w-full sm:max-w-2xl sm:rounded-lg sm:shadow-md sm:px-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-2">
-          <h3 className="font-bold text-navy-950">Notifications</h3>
-          <span className="bg-blue-950 font-bold text-white text-sm rounded-sm px-3 py-px">
-            {getNotificationUnreadAmount()}
+          <h3 className="font-extrabold text-navy-950">Notifications</h3>
+          <span className="bg-blue-950 font-extrabold text-white text-sm rounded-sm px-3 py-px">
+            {getNotificationUnreadAmount(state)}
           </span>
         </div>
 
@@ -23,7 +21,7 @@ export default function Notification() {
         </button>
       </header>
 
-      <div>
+      <div className="flex flex-col gap-y-4">
         {state.map((nc) => (
           <NotificationCard key={nc.id} data={nc} />
         ))}

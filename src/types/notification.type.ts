@@ -8,70 +8,82 @@ const NotificationType = {
   PICTURE_COMMENT: 'picture_comment',
 } as const;
 
-export type NotificationType =
+export type TNotificationType =
   (typeof NotificationType)[keyof typeof NotificationType];
 
-type BaseNotification = {
+export type Notification = {
   id: number;
   userImage: string;
   userName: string;
   time: string;
   read: boolean;
-};
-
-type Reaction = BaseNotification & {
-  type: NotificationType;
-  post: {
+  type: TNotificationType;
+  post?: {
     id: number;
     title?: string;
-  };
-};
-
-type Comment = BaseNotification & {
-  type: NotificationType;
-  post: {
-    id: number;
     imageUrl?: string;
+    alt?: string;
   };
-};
-
-type Follow = BaseNotification & {
-  type: NotificationType;
-};
-
-type GroupJoin = BaseNotification & {
-  type: NotificationType;
-  group: {
+  group?: {
     id: number;
     name: string;
   };
+  message?: string;
 };
 
-type GroupLeave = BaseNotification & {
-  type: NotificationType;
-  group: {
-    id: number;
-    name: string;
-  };
-};
+// type Reaction = BaseNotification & {
+//   type: TNotificationType;
+//   post: {
+//     id: number;
+//     title?: string;
+//   };
+// };
 
-type PrivateMessage = BaseNotification & {
-  type: NotificationType;
-  message: string;
-};
+// type Comment = BaseNotification & {
+//   type: TNotificationType;
+//   post: {
+//     id: number;
+//     imageUrl?: string;
+//   };
+// };
 
-type PictureComment = BaseNotification & {
-  type: NotificationType;
-  picture: {
-    url: string;
-  };
-};
+// type Follow = BaseNotification & {
+//   type: TNotificationType;
+// };
 
-export type Notification =
-  | Reaction
-  | Comment
-  | Follow
-  | GroupJoin
-  | GroupLeave
-  | PrivateMessage
-  | PictureComment;
+// type GroupJoin = BaseNotification & {
+//   type: TNotificationType;
+//   group: {
+//     id: number;
+//     name: string;
+//   };
+// };
+
+// type GroupLeave = BaseNotification & {
+//   type: TNotificationType;
+//   group: {
+//     id: number;
+//     name: string;
+//   };
+// };
+
+// type PrivateMessage = BaseNotification & {
+//   type: TNotificationType;
+//   message: string;
+// };
+
+// type PictureComment = BaseNotification & {
+//   type: TNotificationType;
+//   picture: {
+//     url: string;
+//   };
+// };
+
+// export type Notification =
+//   | Reaction
+//   | Comment
+//   | Follow
+//   | GroupJoin
+//   | GroupLeave
+//   | PrivateMessage
+//   | PictureComment;

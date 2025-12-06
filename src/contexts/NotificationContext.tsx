@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 import type { Notification } from '../types/notification.type';
 import { type NotificationContext } from '../types/notificationContext.type';
-import { notifications } from '../constants/notifications';
+import { notifications } from '../constants/notifications.constant';
 
 const NotificationContext = createContext<NotificationContext | null>(null);
 
