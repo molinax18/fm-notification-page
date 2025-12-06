@@ -1,15 +1,15 @@
-import { createContext, useContext, useState, type ReactNode } from 'react';
-import type { Notification } from '../types/notification.type';
+import { createContext, useContext, useReducer, type ReactNode } from 'react';
 import { type NotificationContext } from '../types/notificationContext.type';
+import { notificationReducer } from '../reducer/notification.reducer';
 import { notifications } from '../constants/notifications.constant';
 
 const NotificationContext = createContext<NotificationContext | null>(null);
 
 export const NotificationProvider = ({ children }: { children: ReactNode }) => {
-  const [state, setState] = useState<Notification[]>(notifications);
+  const [state, dispatch] = useReducer(notificationReducer, notifications);
 
   return (
-    <NotificationContext.Provider value={{ state, setState }}>
+    <NotificationContext.Provider value={{ state, dispatch }}>
       {children}
     </NotificationContext.Provider>
   );

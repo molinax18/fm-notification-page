@@ -38,7 +38,7 @@ export const notifications: Notification[] = [
     userImage: 'assets/images/avatar-rizky-hasanuddin.webp',
     userName: 'Rizky Hasanuddin',
     time: '5 days ago',
-    read: true,
+    read: false,
     type: 'private_message',
     message:
       "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
@@ -48,7 +48,7 @@ export const notifications: Notification[] = [
     userImage: 'assets/images/avatar-kimberly-smith.webp',
     userName: 'Kimberly Smith',
     time: '1 week ago',
-    read: true,
+    read: false,
     type: 'comment',
     post: {
       id: 202,

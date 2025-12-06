@@ -1,8 +1,11 @@
+import { useNotificationContext } from '../../contexts/NotificationContext';
 import type { Notification } from '../../types/notification.type';
 import { getNotificationMessageByType } from '../../utils/notification.util';
 
 export default function NotificationCard({ data }: { data: Notification }) {
-  const { userImage, userName, time, read, type, group, post, message } = data;
+  const { dispatch } = useNotificationContext();
+  const { userImage, userName, time, read, type, group, post, message, id } =
+    data;
 
   const applyExtraStyles = () => {
     if (group) {
@@ -19,6 +22,7 @@ export default function NotificationCard({ data }: { data: Notification }) {
   return (
     <article
       className={`flex items-center gap-x-3 ${read ? 'bg-transparent' : 'bg-navy-50'} text-sm p-3 rounded-md`}
+      onClick={() => dispatch({ type: 'MARK_SINGLE', payload: id })}
     >
       <img className="size-8 self-start" src={userImage} alt={userName} />
 

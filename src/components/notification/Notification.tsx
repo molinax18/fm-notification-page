@@ -4,7 +4,7 @@ import { getNotificationUnreadAmount } from '../../utils/notification.util';
 import NotificationCard from './NotificationCard';
 
 export default function Notification() {
-  const { state } = useNotificationContext();
+  const { state, dispatch } = useNotificationContext();
 
   return (
     <section className="flex flex-col gap-y-6 bg-white h-full py-6 px-4 sm:h-auto sm:w-full sm:max-w-2xl sm:rounded-lg sm:shadow-md sm:px-6">
@@ -16,14 +16,17 @@ export default function Notification() {
           </span>
         </div>
 
-        <button className="text-sm outline-none tr-d-200 hover:cursor-pointer hover:text-blue-950 focus:text-blue-950">
+        <button
+          className="text-sm outline-none tr-d-200 hover:cursor-pointer hover:text-blue-950 focus:text-blue-950"
+          onClick={() => dispatch({ type: 'MARK_ALL' })}
+        >
           Mark all as read
         </button>
       </header>
 
       <div className="flex flex-col gap-y-4">
-        {state.map((nc) => (
-          <NotificationCard key={nc.id} data={nc} />
+        {state.map((n) => (
+          <NotificationCard key={n.id} data={n} />
         ))}
       </div>
     </section>
