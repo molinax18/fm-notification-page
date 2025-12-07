@@ -1,15 +1,12 @@
-const NotificationType = {
-  REACTION: 'reaction',
-  COMMENT: 'comment',
-  FOLLOW: 'follow',
-  GROUP_JOIN: 'group_join',
-  GROUP_LEAVE: 'group_leave',
-  PRIVATE_MESSAGE: 'private_message',
-  PICTURE_COMMENT: 'picture_comment',
-} as const;
-
-export type TNotificationType =
-  (typeof NotificationType)[keyof typeof NotificationType];
+export enum TNotificationType {
+  REACTION = 'REACTION',
+  COMMENT = 'COMMENT',
+  FOLLOW = 'FOLLOW',
+  GROUP_JOIN = 'GROUP_JOIN',
+  GROUP_LEAVE = 'GROUP_LEAVE',
+  PRIVATE_MESSAGE = 'PRIVATE_MESSAGE',
+  PICTURE_COMMENT = 'PICTURE_COMMENT',
+}
 
 export type Notification = {
   id: number;
@@ -30,60 +27,3 @@ export type Notification = {
   };
   message?: string;
 };
-
-// type Reaction = BaseNotification & {
-//   type: TNotificationType;
-//   post: {
-//     id: number;
-//     title?: string;
-//   };
-// };
-
-// type Comment = BaseNotification & {
-//   type: TNotificationType;
-//   post: {
-//     id: number;
-//     imageUrl?: string;
-//   };
-// };
-
-// type Follow = BaseNotification & {
-//   type: TNotificationType;
-// };
-
-// type GroupJoin = BaseNotification & {
-//   type: TNotificationType;
-//   group: {
-//     id: number;
-//     name: string;
-//   };
-// };
-
-// type GroupLeave = BaseNotification & {
-//   type: TNotificationType;
-//   group: {
-//     id: number;
-//     name: string;
-//   };
-// };
-
-// type PrivateMessage = BaseNotification & {
-//   type: TNotificationType;
-//   message: string;
-// };
-
-// type PictureComment = BaseNotification & {
-//   type: TNotificationType;
-//   picture: {
-//     url: string;
-//   };
-// };
-
-// export type Notification =
-//   | Reaction
-//   | Comment
-//   | Follow
-//   | GroupJoin
-//   | GroupLeave
-//   | PrivateMessage
-//   | PictureComment;

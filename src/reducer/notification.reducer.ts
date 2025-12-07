@@ -10,16 +10,13 @@ export const notificationReducer = (
 ) => {
   switch (action.type) {
     case 'MARK_ALL':
-      const notificationsMarked = state.map((n) => ({ ...n, read: true }));
-      return notificationsMarked;
+      return state.map((n) => ({ ...n, read: true }));
 
     case 'MARK_SINGLE':
-      const newNotifications = state.map((n) => ({
+      return state.map((n) => ({
         ...n,
         read: action.payload === n.id ? true : n.read,
       }));
-
-      return newNotifications;
 
     default:
       return state;
