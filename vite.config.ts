@@ -13,4 +13,5 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
+  base: "https://molinax18.github.io/notification-page"
 });
