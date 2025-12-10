@@ -13,5 +13,5 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
-  base: "https://molinax18.github.io/fm-notification-page"
+  base: 'https://molinax18.github.io/fm-notification-page',
 });
